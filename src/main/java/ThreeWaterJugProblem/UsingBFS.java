@@ -36,9 +36,10 @@ public class UsingBFS {
 	Vertex initialVertex = new Vertex(new State(0,0, 0));
         queue.add(initialVertex);      
         visited.add(initialVertex);
-        
+    int i = 0;
 	while(!queue.isEmpty()){             
-            Vertex currentVertex = queue.poll();                                              
+    i++;    
+		Vertex currentVertex = queue.poll();                                              
             currentVertex.addToPath();
             
             if(currentVertex.getState().getJug1() == GOAL || currentVertex.getState().getJug2() == GOAL || currentVertex.getState().getJug3() == GOAL){
@@ -81,6 +82,7 @@ public class UsingBFS {
                 }                                             
             }                       
 	}
-	
+	System.out.println(i);
     }  
 }
+//1 (0-0-0)f:0 (0-5-0)f:0 (0-2-3)f:0 (0-2-0)f:0 (0-0-2)f:0 (0-5-2)f:0 (0-4-3)f:0

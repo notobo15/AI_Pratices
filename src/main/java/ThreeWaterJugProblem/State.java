@@ -15,7 +15,7 @@ public class State {
     private static int MAX_JUG2 = 0;    
     private static int MAX_JUG3 = 0;
     public State(){
-        this.jug1 = 0;
+            this.jug1 = 0;
         this.jug2 = 0;     
         this.jug3 = 0;
     }
@@ -106,15 +106,15 @@ public class State {
         if ((jug1 + jug3) >= MAX_JUG1)
             return new State( MAX_JUG1, jug2, (jug1 + jug3 - MAX_JUG1));
         else
-            return new State((jug1 + jug2), jug2 , 0);
+            return new State((jug1 + jug3), jug2 , 0);
     }
     
     // 3 ->  2
     public State pour_jug3_jug2(){
         if ((jug3 + jug2) >= MAX_JUG2)
-            return new State( jug1, (jug3 + jug2 - MAX_JUG2), MAX_JUG3);
+            return new State( jug1, MAX_JUG2, (jug3 + jug2 - MAX_JUG2));
         else
-            return new State(jug1, (jug1 + jug2), 0);
+            return new State(jug1, (jug3 + jug2), 0);
     }
         
     @Override
@@ -124,7 +124,7 @@ public class State {
 	if (!(s instanceof State))
             return false;	
 
-        return ((s.getJug1() == this.getJug1()) && (s.getJug2() == this.getJug2()));
+        return ((s.getJug1() == this.getJug1()) && (s.getJug2() == this.getJug2()) && (s.getJug3() == this.getJug3()) );
     }
     
     @Override
