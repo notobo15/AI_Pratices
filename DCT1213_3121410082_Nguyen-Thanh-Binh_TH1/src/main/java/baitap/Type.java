@@ -1,0 +1,13 @@
+package baitap;
+
+public enum Type {
+    FARMER_CROSS,
+    FARMER_BACK,
+    FARMER_FOX_CROSS,
+    FARMER_FOX_BACK,
+    FARMER_GOOSE_CROSS,
+    FARMER_GOOSE_BACK,
+    FARMER_BEANS_CROSS,
+    FARMER_BEANS_BACK,
+    INIT,
+}
